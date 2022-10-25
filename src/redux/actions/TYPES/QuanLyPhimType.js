@@ -1,0 +1,1 @@
+export const SET_RSLICK = "SET_RSLICK"

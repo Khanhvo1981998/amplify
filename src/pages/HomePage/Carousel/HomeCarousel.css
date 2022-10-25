@@ -1,0 +1,35 @@
+.slick-dots {
+  position: absolute;
+  bottom: 20px !important;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li button:before {
+  font-family: "slick";
+  font-size: 19px !important;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: ".";
+  text-align: center;
+  opacity: 0.25;
+  color: orange !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dots li {
+  margin: 0 0 3rem !important;
+}
+.dots button::before {
+  font-size: 2rem !important ;
+  color: orange !important;
+}

@@ -1,0 +1,43 @@
+.slick-prev {
+  color: red;
+}
+
+.slick-next {
+  right: -500px;
+  bottom: 43px;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  background-color: gray;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: red;
+}
+
+.active_Film {
+  /* @apply bg-gray-800 .text-white ; */
+  background-color: gray !important;
+
+  color: white !important;
+}
+
+.non_activeFilm {
+  /* @apply .bg-white .text-gray-800; */
+  background-color: white !important;
+  color: gray !important;
+}
+
+/* .slick-prev {
+  left: -57px;
+} */
+.slick-prev:before,
+.slick-next:before {
+  color: gray !important;
+  font-size: 3rem !important;
+}
+
+.width-item {
+  width: 100% !important;
+}

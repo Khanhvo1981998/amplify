@@ -1,0 +1,9 @@
+export const SET_CAROUSEL = "SET_CAROUSEL"
+// export const SET_RSLICK = "SET_RSLICK"
+export const SET_FILM_DANG_CHIEU = "SET_PHIM_DANG_CHIEU"
+export const SET_FILM_SAP_CHIEU = "SET_PHIM_SAP_CHIEU"
+export const SET_RAP_CHIEU = "SET_RAP_CHIEU"
+export const SET_CUM_RAP = "SET_CUM_RAP"
+export const SET_CHI_TIET_PHIM = "SET_CHI_TIET_PHIM"
+export const SET_LICH_CHIEU_PHIM = "SET_LICH_CHIEU_PHIM"
+

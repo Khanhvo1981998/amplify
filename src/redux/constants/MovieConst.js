@@ -1,0 +1,2 @@
+export const SET_MOVIE_LIST_API = "SET_MOVIE_LIST_API";
+export const GET_MOVIE_API = "GET_MOVIE_API";

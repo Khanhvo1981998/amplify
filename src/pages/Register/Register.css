@@ -1,0 +1,16 @@
+.modal.show .modal-dialog {
+  transform: translateX(-216px);
+}
+
+.modal-content {
+  width: 1050px;
+}
+
+.form-check-input {
+  margin-left: -19.25rem;
+}
+
+.fa-solid,
+.fas {
+  margin-bottom: 34px;
+}

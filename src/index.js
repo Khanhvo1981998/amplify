@@ -3,12 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from './redux/configStore'
+import { Provider } from "react-redux";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
+//Cấu hình realtime (websocket với signalR)
+// import * as signalR from '@aspnet/signalr'
+
+//antd
+// import "antd/dist/antd.css";
+import 'antd/dist/antd.min.css';
+
+//Import đa ngôn ngữ
+// import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
