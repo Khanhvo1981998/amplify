@@ -60,6 +60,9 @@ export default function Header() {
                     <li className="flex">
                         <Link to="/contact" className="nav-item nav-link">HỖ TRỢ</Link>
                     </li>
+                    <li className="flex">
+                        <Link to="/myseat" className="nav-item nav-link">VÉ CỦA TÔI</Link>
+                    </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
                     {/* <button className="self-center px-8 py-3 rounded text-white border border-warning">Sign in</button>

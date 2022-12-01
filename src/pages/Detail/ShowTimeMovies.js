@@ -46,7 +46,7 @@ export default function ShowTimeMovies({ arrRapChieu }) {
                                                 return (
 
                                                     <div>
-                                                        {showTime.lstLichChieuTheoPhim.map(
+                                                        {showTime.lstLichChieuTheoPhim.slice(0, 8).map(
                                                             (showTimeList) => {
                                                                 return (
                                                                     <div className="">

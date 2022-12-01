@@ -13,7 +13,7 @@ import { lowerCaselizeString } from ".././../util/stringFormatUtils";
 import HomeMenu from '../HomePage/HomeMenu/HomeMenu';
 import { getDanhSachPhimAction } from '../../redux/actions/QuanLyPhimAction';
 import TrailerModal from '../Modal/TrailerModal/TrailerModal';
-import useModal from '../../hook/useModal';
+
 import HOCTrailerModal from '../HOC/HOCTrailerModal';
 import ShowTimeMovies from './ShowTimeMovies';
 import {
@@ -137,7 +137,7 @@ export default function Detail() {
                                             <span className="text-black-500 ml-5 text-2xl font-bold">
                                                 {moment(
                                                     filmDetail?.ngayKhoiChieu
-                                                ).format("DD MMM YYYY")}
+                                                ).format("DD/MM/YYYY")}
                                             </span>
                                         </p>
                                         <p className="text-slate-300 text-lg italic">

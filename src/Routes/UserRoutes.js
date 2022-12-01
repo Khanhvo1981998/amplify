@@ -10,10 +10,11 @@ import Register from "../pages/Register/Register";
 import Detail from "../pages/Detail/Detail";
 import Error from "../pages/Error/Error";
 import TemplateTheme from "../templates/DetailTemplate/Template/TemplateTheme";
-import Checkout from "../pages/Checkout/Checkout";
+import Checkout from "../pages/Checkout/BookingSeats/Checkout";
 import UserLoginTemplate from "../templates/UserTempalte/UserLoginTemplate";
 import Contact from "../pages/Contact/Contact";
 import DetailTemplate from "../templates/DetailTemplate/Template/DetailTemplate";
+import Myseat from "../pages/Checkout/MySeat/Myseat";
 export const userRoutes = [
     {
         path: "/",
@@ -42,6 +43,10 @@ export const userRoutes = [
     {
         path: "/checkout/:id",
         Element: <UserLoginTemplate Component={Checkout} />,
+    },
+    {
+        path: "/myseat",
+        Element: <UserLoginTemplate Component={Myseat} />,
     },
     {
         path: "/detail",

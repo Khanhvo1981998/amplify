@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router";
 import { qlDatVe } from "../../services/QuanLyDatVeService";
-import { SET_CHI_TIET_PHONG_VE } from "./TYPES/QuanLyDatVeType";
+import { ThongTinDatVe } from "../../_core/models/ThongTinDatVe";
+import { displayLoadingAction, hideLoadingAction } from "./LoadingAction";
+import { DAT_VE, SET_CHI_TIET_PHONG_VE } from "./TYPES/QuanLyDatVeType";
 
 
 const history = useNavigate
@@ -27,6 +29,31 @@ export const laychiTietPhongVeAction = (maLichChieu) => {
             console.log('errors', errors.response?.data)
 
         }
+    }
+}
 
+export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
+
+    return async dispatch => {
+        try {
+            dispatch(displayLoadingAction)
+
+            const result = await qlDatVe.datVe(thongTinDatVe);
+            console.log(result, "result");
+
+            console.log(result.data.content);
+            await dispatch(laychiTietPhongVeAction(thongTinDatVe.maLichChieu))
+            dispatch(hideLoadingAction)
+
+
+        }
+        catch (errors) {
+            console.log("errorss", errors);
+            console.log('errors', errors.response?.data)
+            dispatch({
+                type: "HIDE_LOADING"
+            })
+
+        }
     }
 }

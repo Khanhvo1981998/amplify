@@ -7,6 +7,7 @@ import { QuanLyPhimReducer } from "../redux/reducers/QuanLyPhimReducer";
 import { QuanLyRapReducer } from "../redux/reducers/QuanLyRapReducer";
 import { QuanLyNguoiDungReducer } from "../redux/reducers/QuanLyNguoiDungReducer";
 import { QuanLyDatVeReducer } from "../redux/reducers/QuanLyDatVeReducer";
+import { LoadingReducer } from "../redux/reducers/LoadingReducer";
 import thunk from "redux-thunk";
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() || compose;
 // import reduxThunk from "redux-thunk"
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
     QuanLyRapReducer,
     QuanLyNguoiDungReducer,
     QuanLyDatVeReducer,
+    LoadingReducer,
 
 })
 

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { BrowserRouter, Route, Router, Routes, useNavigate } from "react-router-dom";
 
 import { userRoutes } from "./Routes/UserRoutes";
+import Loading from './component/Loading/Loading';
 export const history = useNavigate
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
 
     <div className=" bg-zinc-900 relative">
       <BrowserRouter>
+        <Loading />
         <Routes>
           {userRoutes.map((route, index) => {
             return (

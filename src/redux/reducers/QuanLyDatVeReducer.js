@@ -3,16 +3,7 @@ import { ThongTinLichChieu } from "../../_core/models/ThongTinPhongVe";
 
 const stateDefault = {
     chiTietPhongVe: new ThongTinLichChieu(),
-    danhSachGheDangDat: [{
-        daDat: false,
-        giaVe: 90000,
-        loaiGhe: "Thuong",
-        maGhe: 56041,
-        maRap: 505,
-        stt: "01",
-        taiKhoanNguoiDat: null,
-        tenGhe: "01"
-    }]
+    danhSachGheDangDat: []
 }
 
 

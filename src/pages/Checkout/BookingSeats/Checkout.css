@@ -1,0 +1,35 @@
+.ghe {
+  /* ghe thuong */
+
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  background-color: rgb(123, 122, 122);
+  color: #fff;
+}
+
+.gheDaDat {
+  background-color: rgb(243, 184, 8);
+  cursor: no-drop;
+  border: solid 1px gray;
+}
+
+.gheDangDat {
+  background-color: rgb(18, 176, 18) !important;
+}
+
+.gheVip {
+  background-color: rgb(228, 74, 8);
+  /* background-color: blue; */
+}
+
+.gheDaDuocDat {
+  background-color: rgb(246, 246, 246);
+  -webkit-box-shadow: 2px 2px 2px 2px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+  color: rgb(244, 157, 26) !important;
+  border: 1px solid rgb(244, 157, 26);
+}

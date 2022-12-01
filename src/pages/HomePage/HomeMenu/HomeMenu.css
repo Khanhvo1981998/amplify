@@ -1,1 +1,8 @@
 @import "~antd/dist/antd.css";
+
+.ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap,
+.ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,9 +1,17 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { Component, Fragment, useEffect, useState } from 'react'
+import { faArrowLeftLong, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from "react-slick";
 import { SET_FILM_DANG_CHIEU, SET_FILM_SAP_CHIEU, } from '../../../redux/actions/TYPES/ActionType';
 import FilmFlip from '../Film/FilmFlip/FilmFlip';
 import styleSlick from "../RSlick/RSlick.module.css"
 import { useSelector, useDispatch } from "react-redux";
+import { Transition } from 'semantic-ui-react';
+import { Dialog } from '@mui/material';
+import moment from 'moment';
+import { Rate } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
+import useWindowDimensions from '../../../hook/useWindowDimensions';
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -27,9 +35,13 @@ function SamplePrevArrow(props) {
     );
 }
 
+
+
 const RSlick = (props) => {
 
     const { arrFilm } = props // test
+
+    // console.log(arrFilm, "ArrPhim");
 
     const dispatch = useDispatch()
     const { dangChieu, sapChieu } = useSelector(state => state.QuanLyPhimReducer)
@@ -37,7 +49,7 @@ const RSlick = (props) => {
     const renderFilms = () => {
         return props.arrFilm.slice(0, 12).map((item, index) => {
             return <div className='' key={index}>
-                <FilmFlip item={item} />
+                <FilmFlip item={item} arrFilm={arrFilm} />
 
             </div>
         })
@@ -74,21 +86,7 @@ const RSlick = (props) => {
 
             <Slider {...settings}>
                 {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
-                {renderFilms()}
+
 
             </Slider>
         </div >
@@ -97,3 +95,4 @@ const RSlick = (props) => {
 
 
 export default RSlick;
+
