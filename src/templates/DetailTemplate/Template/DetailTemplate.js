@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "../../../pages/Modal/Modal";
+import Modal from "../../../component/Modal/Modal";
 import Footer from "../../HomeTemplate/Footer/Footer";
 import Header from '../../HomeTemplate/Header/Header';
 

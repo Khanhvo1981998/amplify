@@ -17,7 +17,7 @@ import "slick-carousel/slick/slick-theme.css";
 import 'antd/dist/antd.min.css';
 
 //Import đa ngôn ngữ
-// import './i18n';
+import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -6,3 +6,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.tabpane-scroll {
+  height: 600px;
+  overflow-y: auto;
+  width: 100%;
+}

@@ -1,25 +1,13 @@
 import React, { useState } from 'react'
 import { json, useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
-import HOCmodal from '../../../pages/HOC/HOCmodal';
-
-import Login from '../../../pages/Login/Login'
+import HOCmodal from '../../../HOC/HOCmodal';
 import "./Header.css"
-
 
 export default function Header() {
 
     const history = useNavigate();
-
-    const handleLogout = () => {
-        localStorage.clear();
-
-        history('/login')
-    }
-
     return (
-
-
         <header className="p-4 dark:bg-gray-800 dark:text-gray-100 bg-black w-full fixed opacity-50 z-10">
             <div className="container flex justify-between h-16 mx-auto">
                 <a rel="noopener noreferrer" href="/" aria-label="Back to homepage" className="icon text-decoration-none flex items-center p-2">
@@ -30,20 +18,11 @@ export default function Header() {
                     <i className="fa fa-cube" />
                     I<b>Movies</b>
                 </a>
-                <ul className="items-stretch hidden space-x-3 lg:flex">
+                <ul className="items-stretch hidden space-x-3 lg:flex ">
                     <li className="flex">
                         <Link to="/" className="nav-item nav-link active">MUA VÉ</Link>
                     </li>
-                    {/* <li className="flex">
-                        <div className="nav-item dropdown">
-                            <Link href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">PHIM</Link>
-                            <div className="dropdown-menu">
-                                <Link to="/phimdangchieu" className="dropdown-item">PHIM ĐANG CHIẾU</Link>
-                                <Link to="/phimxapchieu" className="dropdown-item">PHIM XẮP CHIẾU</Link>
 
-                            </div>
-                        </div>
-                    </li> */}
                     <li className="flex">
                         <div className="nav-item dropdown">
                             <Link href="/gocdienanh" className="nav-link dropdown-toggle" data-toggle="dropdown">GÓC ĐIỆN ẢNH</Link>

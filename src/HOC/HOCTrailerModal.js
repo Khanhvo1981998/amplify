@@ -1,8 +1,8 @@
 
 import { useDispatch } from "react-redux";
-import Login from "../Login/Login";
-import TrailerModal from "../Modal/TrailerModal/TrailerModal";
-import Register from "../Register/Register";
+import Login from "../pages/Login/Login";
+import TrailerModal from "../component/Modal/TrailerModal/TrailerModal";
+import Register from "../pages/Register/Register";
 
 
 export default function HOCTrailerModal() {

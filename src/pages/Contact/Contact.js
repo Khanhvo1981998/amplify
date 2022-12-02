@@ -1,6 +1,15 @@
-import React from 'react'
+import { message } from "antd";
+import React from "react";
+import { useNavigate } from "react-router";
+import "./Contact.css";
 
 export default function Contact() {
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        message.success("Cảm ơn bạn đã đóng góp")
+        navigate("/")
+    }
     return (
         <div className="mx-4 card bg-white max-w-md p-10 md:rounded-lg my-8 mx-auto">
             <div className="title">
@@ -26,8 +35,8 @@ export default function Contact() {
                 </div>
             </div>
             <div className="submit">
-                <button type="submit" className=" w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none ">Submit</button>
+                <button onClick={handleClick} type="submit" className=" w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none ">Submit</button>
             </div>
         </div>
-    )
+    );
 }

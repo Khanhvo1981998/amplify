@@ -1,10 +1,5 @@
-
-// import { useDispatch } from "react-redux";
-// import TrailerModal from "../Modal/TrailerModal/TrailerModal";
-import Login from "../Login/Login";
-import Register from "../Register/Register";
-
-
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 // export default function HOCmodal() {
 
 //     const dispatch = useDispatch();
@@ -39,31 +34,35 @@ import Register from "../Register/Register";
 
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate, useMatch, useLocation } from "react-router-dom";
+import { NavLink, useNavigate, useMatch, useLocation, Link } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
-import { Avatar } from "antd";
+import { Avatar, Select } from "antd";
 import { Dropdown, Menu, message, Space } from "antd";
-import { logout } from "../../redux/reducers/authReducer";
-import { localStoreService } from "../../services/localStoreService";
+import { logout } from "../redux/reducers/authReducer";
+import { localStoreService } from "../services/localStoreService";
+import { useTranslation } from 'react-i18next';
+
+
+
 export default function HOCmodal() {
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
-    const [isLogged, setisLogged] = useState(false);
+
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
     let location = useLocation();
-    console.log("userLogin", userLogin);
 
-    // let handleLogout = useCallback(() => {
-    //     return () => {
-    //         window.location.href = "/"
-    //     }
-    // }, [])
+    // Hook đa ngôn ngữ
+    const { t, i18n } = useTranslation();
+    const { Option } = Select;
+    function handleChange(value) {
+        return i18n.changeLanguage(value)
+    }
+
+
 
     const menu = (
-        <Menu className="w-100 p-0"
-        // onClick={onClickUserDropdown} 
-        >
+        <Menu className="w-100 p-0">
             <div>
                 {userLogin.accessToken ? (
                     <div className="">
@@ -75,7 +74,7 @@ export default function HOCmodal() {
                             }}
                             // onClick={handleLogout}
                             type="button" className=" w-100 self-center px-8 py-3 rounded text-white border " data-toggle="modal" data-target="#modelId">
-                            <Menu.Item style={{ color: "red" }} key="logout">Đăng Xuất</Menu.Item>
+                            <Menu.Item style={{ color: "red" }} >{t('logout')}</Menu.Item>
                         </button>
                     </div>
 
@@ -93,7 +92,7 @@ export default function HOCmodal() {
                                         })
                                     }}
                                     type="button" className="w-100 self-center px-8 py-3 rounded text-black border" data-toggle="modal" data-target="#modelId">
-                                    <Menu.Item style={{ color: "" }} key="register">Đăng Ký</Menu.Item>
+                                    <Menu.Item style={{ color: "" }} >{t('register')}</Menu.Item>
                                 </button>
                             </div>
                             <div>
@@ -105,7 +104,7 @@ export default function HOCmodal() {
                                         })
                                     }}
                                     type="button" className="self-center px-8 py-3 rounded text-white border " data-toggle="modal" data-target="#modelId">
-                                    <Menu.Item style={{ color: "" }} key="login">Đăng Nhập</Menu.Item>
+                                    <Menu.Item style={{ color: "" }}>{t('login')}</Menu.Item>
                                 </button>
                             </div>
                         </div>
@@ -116,16 +115,23 @@ export default function HOCmodal() {
     );
     return (
         <div>
+            <Select className="mr-2" defaultValue="vi" style={{ width: 100 }} onChange={handleChange}>
+                <Option value="en">English</Option>
+                <Option value="vi">Vietnam</Option>
+                <Option value="chi">China</Option>
+            </Select>
             {
                 userLogin.accessToken ? (
-                    <Dropdown overlayStyle={{ display: "inline-block" }} overlay={menu} placement="bottomRight" arrow>
+                    <Dropdown overlayStyle={{ display: "" }} overlay={menu} placement="bottomRight" arrow>
                         <a onClick={(e) => e.preventDefault()}>
                             <Space>
                                 <div className="flex gap-4 items-center">
+
                                     <Avatar size="large" icon={<UserOutlined />} />
                                     <span className="text-yellow-500 text-lg capitalize	">
                                         Hi, {userLogin.hoTen}
                                     </span>
+
                                 </div>
                             </Space>
                         </a>
@@ -136,9 +142,7 @@ export default function HOCmodal() {
                             <Space>
                                 <div className="flex gap-4 items-center">
                                     <Avatar size="large" icon={<UserOutlined />} />
-                                    {/* <button className="bg-yellow-500 hover:bg-yellow-400   rounded-md py-2 px-5 text-black text-lg font-semibold duration-300 ease-in-out">
-                                        Đăng Nhập
-                                    </button> */}
+
                                 </div>
                             </Space>
                         </a>

@@ -99,14 +99,14 @@ function Footer() {
                         </h6>
                         <p class="mb-4">
                             <a href="#!" class="text-gray-600">
-                                <i class="fa-brands fa-apple"></i>
-                                IOS
+                                <i class="fa-brands fa-apple mr-2 text-3xl "></i>
+                                <span className="text-2xl">IOS</span>
                             </a>
                         </p>
                         <p class="mb-4">
                             <a href="#!" class="text-gray-600">
-                                <i class="fa-brands fa-android"></i>
-                                Android
+                                <i class="fa-brands fa-android mr-2 text-3xl "></i>
+                                <span className="text-2xl">Android</span>
                             </a>
                         </p>
 

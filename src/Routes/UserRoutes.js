@@ -9,7 +9,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Detail from "../pages/Detail/Detail";
 import Error from "../pages/Error/Error";
-import TemplateTheme from "../templates/DetailTemplate/Template/TemplateTheme";
+import TemplateTheme from "../component/HeaderTemplate/TemplateTheme";
 import Checkout from "../pages/Checkout/BookingSeats/Checkout";
 import UserLoginTemplate from "../templates/UserTempalte/UserLoginTemplate";
 import Contact from "../pages/Contact/Contact";
@@ -35,11 +35,6 @@ export const userRoutes = [
         Element: <Contact />,
     },
 
-    // {
-    //     path: "/checkout",
-    //     Element: <TemplateTheme Component={Checkout} />,
-    // },
-
     {
         path: "/checkout/:id",
         Element: <UserLoginTemplate Component={Checkout} />,
@@ -54,7 +49,7 @@ export const userRoutes = [
     },
     {
         path: "/detail/:id",
-        Element: <DetailTemplate Component={Detail} />,
+        Element: <TemplateTheme Component={Detail} />,
     },
     {
         path: "*",

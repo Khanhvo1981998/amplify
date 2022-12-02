@@ -3,20 +3,15 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate, useParams } from 'react-router';
 import { datVeAction, laychiTietPhongVeAction } from '../../../redux/actions/QuanLyDatVeAction';
-import { qlRapService } from '../../../services/QuanLyRapService';
-import { style } from "../../Checkout/BookingSeats/Checkout.module.css";
 import "../../Checkout/BookingSeats/Checkout.css"
 import { Link } from 'react-router-dom';
-import HOCmodal from '../../HOC/HOCmodal';
+import HOCmodal from '../../../HOC/HOCmodal';
 import { DAT_VE } from '../../../redux/actions/TYPES/QuanLyDatVeType';
-// import SeatItem from "./SeatItem";
 import Background from '../../../img/galaxy.jpg';
 import _ from 'lodash';
 import { ThongTinDatVe } from '../../../_core/models/ThongTinDatVe';
 import { Tabs } from 'antd';
 import { CloseOutlined, UserOutlined } from '@ant-design/icons';
-import { USER_LOGIN } from '../../../util/Config';
-import { thongTinNguoiDungAction } from '../../../redux/actions/QuanLyNguoiDungAction';
 const { TabPane } = Tabs;
 
 
@@ -36,19 +31,6 @@ export default function Checkout(props) {
     console.log("uselogin", userLogin);
 
 
-    // const getShowTimeDetail = async () => {
-    //     try {
-    //         setLoading(true);
-    //         const res = await qlRapService.layThongTinLichChieuPhim(id);
-    //         const data = res.data.content;
-    //         setMovie(data.thongTinPhim);
-    //         setSeats(data.danhSachGhe);
-    //         setLoading(false);
-    //     } catch (err) {
-    //         console.log(err);
-    //         setLoading(false);
-    //     }
-    // };
 
     useEffect(() => {
         const action = laychiTietPhongVeAction(id)
@@ -58,35 +40,6 @@ export default function Checkout(props) {
 
     const { danhSachGhe, thongTinPhim } = chiTietPhongVe
 
-    // const countTotalCost = () => {
-    //     return bookingSeats
-    //         .reduce((sum, seat) => {
-    //             return sum + seat.giaVe;
-    //         }, 0)
-    //         .toLocaleString();
-    // };
-    // const isBooked = (seatCode) => {
-    //     const seat = bookingSeats.find((seat) => seat.tenGhe === seatCode);
-    //     if (!seat) return false;
-    //     return true;
-    // };
-    // const bookSeat = (seatCode) => {
-    //     const seatToBook = seats.find((seat) => seat.tenGhe === seatCode);
-    //     if (seatToBook.taiKhoanNguoiDat) return false;
-    //     else if (isBooked(seatCode)) {
-    //         const newBookingSeat = bookingSeats.filter(
-    //             (seat) => seat.tenGhe !== seatCode
-    //         );
-    //         setBookingSeats(newBookingSeat);
-    //     } else {
-    //         const seat = {
-    //             giaVe: seatToBook.giaVe,
-    //             tenGhe: seatToBook.tenGhe,
-    //             maGhe: seatToBook.maGhe,
-    //         };
-    //         setBookingSeats([...bookingSeats, seat]);
-    //     }
-    // };
     const handleDatVe = () => {
         const thongTinDatVe = new ThongTinDatVe()
         // const { id } = useParams
@@ -97,13 +50,6 @@ export default function Checkout(props) {
         dispatch(datVeAction(thongTinDatVe)); //Gọi API đặt vé
 
         setTimeout(() => {
-
-            // if (!loading) {
-
-            //     setTimeout(() => {
-            //         setLoading(true)
-            //     }, 100);
-            // }
             window.location.reload(false);
         }, 1000);
     };
@@ -186,9 +132,7 @@ export default function Checkout(props) {
                         </li>
                     </ul>
                     <div className="items-center flex-shrink-0 hidden lg:flex">
-                        {/* <button className="self-center px-8 py-3 rounded text-white border border-warning">Sign in</button>
-                    <button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900 text-white border border-warning">Sign up</button> */}
-                        {/* <HOCmodal /> */}
+
                     </div>
                     <button className="p-4 lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-100">
@@ -312,143 +256,7 @@ export default function Checkout(props) {
 function callback(key) {
     console.log(key);
 }
-// export default function Check(props) {
 
-
-//     return (
-//         <div className='p-5'>
-//             <Tabs defaultActiveKey="1" onChange={callback}>
-//                 <TabPane tab="01 GHẾ CHỌN & THANH TOÁN" key="1">
-//                     <Checkout />
-//                 </TabPane>
-//                 <TabPane tab="02 KẾT QUẢ ĐẶT VÉ" key="2">
-//                     <KetQuaDatVe />
-//                 </TabPane>
-//             </Tabs>
-//         </div>
-//     )
-
-// }
-// function KetQuaDatVe(props) {
-
-//     const dispatch = useDispatch
-
-//     const { thongTinNguoiDung } = useSelector(state => state.QuanLyNguoiDungReducer)
-
-//     console.log("Thong Tin Nguoi Dung", thongTinNguoiDung);
-
-//     // useEffect(() => {
-
-//     //     const action = thongTinNguoiDungAction()
-//     //     dispatch(action)
-//     // }, [])
-//     console.log("Thong Tin Nguoi Dung", thongTinNguoiDung);
-//     return (
-
-//         <div >
-//             <Tabs style={{ alignItems: "center" }} defaultActiveKey="3" onChange={callback}>
-//                 <TabPane style={{ fontSize: 30, fontFamily: "sans-serif" }} tab="LỊCH SỬ ĐẶT VÉ" key="1">
-//                     <section className="text-gray-400 bg-gray-900 body-font">
-//                         <div className="container px-5 py-24 mx-auto">
-//                             <div className="flex flex-wrap -m-4">
-//                                 <div className="p-4 md:w-1/3">
-//                                     <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
-//                                         <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog" />
-//                                         <div className="p-6">
-//                                             <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CATEGORY</h2>
-//                                             <h1 className="title-font text-lg font-medium text-white mb-3">The Catalyzer</h1>
-//                                             <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-//                                             <div className="flex items-center flex-wrap ">
-//                                                 <a className="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-//                                                     <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
-//                                                         <path d="M5 12h14" />
-//                                                         <path d="M12 5l7 7-7 7" />
-//                                                     </svg>
-//                                                 </a>
-//                                                 <span className="text-gray-500 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-800">
-//                                                     <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-//                                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-//                                                         <circle cx={12} cy={12} r={3} />
-//                                                     </svg>1.2K
-//                                                 </span>
-//                                                 <span className="text-gray-500 inline-flex items-center leading-none text-sm">
-//                                                     <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-//                                                         <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-//                                                     </svg>6
-//                                                 </span>
-//                                             </div>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                                 <div className="p-4 md:w-1/3">
-//                                     <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
-//                                         <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/721x401" alt="blog" />
-//                                         <div className="p-6">
-//                                             <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CATEGORY</h2>
-//                                             <h1 className="title-font text-lg font-medium text-white mb-3">The 400 Blows</h1>
-//                                             <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-//                                             <div className="flex items-center flex-wrap">
-//                                                 <a className="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-//                                                     <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
-//                                                         <path d="M5 12h14" />
-//                                                         <path d="M12 5l7 7-7 7" />
-//                                                     </svg>
-//                                                 </a>
-//                                                 <span className="text-gray-500 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-800">
-//                                                     <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-//                                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-//                                                         <circle cx={12} cy={12} r={3} />
-//                                                     </svg>1.2K
-//                                                 </span>
-//                                                 <span className="text-gray-500 inline-flex items-center leading-none text-sm">
-//                                                     <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-//                                                         <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-//                                                     </svg>6
-//                                                 </span>
-//                                             </div>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                                 <div className="p-4 md:w-1/3">
-//                                     <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
-//                                         <img className="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/722x402" alt="blog" />
-//                                         <div className="p-6">
-//                                             <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">CATEGORY</h2>
-//                                             <h1 className="title-font text-lg font-medium text-white mb-3">Shooting Stars</h1>
-//                                             <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-//                                             <div className="flex items-center flex-wrap ">
-//                                                 <a className="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-//                                                     <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round">
-//                                                         <path d="M5 12h14" />
-//                                                         <path d="M12 5l7 7-7 7" />
-//                                                     </svg>
-//                                                 </a>
-//                                                 <span className="text-gray-500 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-800">
-//                                                     <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-//                                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-//                                                         <circle cx={12} cy={12} r={3} />
-//                                                     </svg>1.2K
-//                                                 </span>
-//                                                 <span className="text-gray-500 inline-flex items-center leading-none text-sm">
-//                                                     <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-//                                                         <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-//                                                     </svg>6
-//                                                 </span>
-//                                             </div>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </section>
-
-//                 </TabPane>
-
-//             </Tabs>
-//         </div>
-//     )
-
-// }
 
 
 
