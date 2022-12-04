@@ -8,7 +8,6 @@ function Footer() {
 
     const arrHeThongRap = _.map(arrRapChieu, (heThongRap) => _.pick(heThongRap, ["maHeThongRap", "tenHeThongRap", "logo"]));
 
-    console.log(arrHeThongRap, "log");
     return (
         <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
             <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">

@@ -18,11 +18,11 @@ export const dangNhapAction = (thongTinDangNhap) => {
                 });
                 history(-1)
             }
-            console.log("dang nhap", result.data.content);
+            // console.log("dang nhap", result.data.content);
 
         }
         catch (errors) {
-            console.log('errors', errors.response?.data)
+            // console.log('errors', errors.response?.data)
 
         }
 

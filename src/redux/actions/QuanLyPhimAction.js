@@ -10,8 +10,8 @@ export const getDanhSachPhimAction = async (dispatch) => {
             type: SET_RSLICK,
             arrFilm: result.data.content
         })
-        console.log("abc", result);
+        // console.log("abc", result);
     } catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 }

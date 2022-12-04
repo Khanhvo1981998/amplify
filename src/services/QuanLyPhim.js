@@ -17,4 +17,6 @@ export class QuanLyPhim extends baseService {
   }
 }
 
-export const qlPhimService = new QuanLyPhim();   
+export const qlPhimService = new QuanLyPhim();
+
+

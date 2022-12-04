@@ -18,17 +18,17 @@ export default function Myseat(props) {
 
     const { thongTinNguoiDung } = useSelector(state => state.QuanLyNguoiDungReducer)
 
-    console.log("Thong Tin Nguoi Dung", thongTinNguoiDung);
+    // console.log("Thong Tin Nguoi Dung", thongTinNguoiDung);
 
 
-    console.log("userlogin", userLogin);
+    // console.log("userlogin", userLogin);
 
     useEffect(() => {
 
         // const action = thongTinNguoiDungAction()
         dispatch(thongTinNguoiDungAction())
     }, [])
-    console.log("Thong Tin Nguoi Dung", thongTinNguoiDung);
+    // console.log("Thong Tin Nguoi Dung", thongTinNguoiDung);
 
     const renderTicket = () => {
         return (

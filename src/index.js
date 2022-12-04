@@ -5,10 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/configStore'
 import { Provider } from "react-redux";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-
 //Cấu hình realtime (websocket với signalR)
 // import * as signalR from '@aspnet/signalr'
 

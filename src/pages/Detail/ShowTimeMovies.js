@@ -11,7 +11,7 @@ import { Tab, TabPane } from "semantic-ui-react";
 export default function ShowTimeMovies({ arrRapChieu }) {
 
     const renderShowTime = () => {
-        console.log(arrRapChieu, "showtime");
+        // console.log(arrRapChieu, "showtime");
         return arrRapChieu.map((heThongRap, index) => {
             return (
                 <TabPane tab={<img src={heThongRap.logo} className="rounded-full" width="50" />} key={index}>

@@ -14,7 +14,7 @@ export const QuanLyDatVeReducer = (state = stateDefault, action) => {
             return { ...state }
         }
         case DAT_VE: {
-            console.log(action);
+
 
             // cập nhật danh sách ghế đang đặt
             let danhSachGheCapNhat = [...state.danhSachGheDangDat]

@@ -13,9 +13,9 @@ export const getQuanLyRapAction = async (dispatch) => {
                 arrRapChieu: result.data.content
             })
         }
-        console.log("quan ly rap", result);
+        // console.log("quan ly rap", result);
     } catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 }
 
@@ -30,11 +30,11 @@ export const layThongTinChiTietPhim = (id) => {
                     filmDetail: result.data.content
                 })
             }
-            console.log("cum rap", result);
+            // console.log("cum rap", result);
 
         }
         catch (errors) {
-            console.log('errors', errors.response?.data)
+            // console.log('errors', errors.response?.data)
 
         }
     }

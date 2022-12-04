@@ -11,6 +11,6 @@ export const getCarouselAction = async (dispatch) => {
         })
         // // console.log("abc", result);
     } catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 }

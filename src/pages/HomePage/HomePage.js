@@ -14,10 +14,10 @@ import Background from '../../img/galaxy.jpg'
 export default function HomePage(props) {
 
     const { arrFilm } = useSelector(state => state.QuanLyPhimReducer)
-    console.log("arrFilm", arrFilm);
+
 
     const { arrRapChieu } = useSelector(state => state.QuanLyRapReducer)
-    console.log("arrRapChieu", arrRapChieu);
+
 
 
     const dispatch = useDispatch();

@@ -26,9 +26,9 @@ export default function Checkout(props) {
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
     const { chiTietPhongVe, danhSachGheDangDat } = useSelector(state => state.QuanLyDatVeReducer)
 
-    console.log({ chiTietPhongVe, danhSachGheDangDat });
+    // console.log({ chiTietPhongVe, danhSachGheDangDat });
     const { id } = useParams();
-    console.log("uselogin", userLogin);
+    // console.log("uselogin", userLogin);
 
 
 
@@ -45,7 +45,7 @@ export default function Checkout(props) {
         // const { id } = useParams
         thongTinDatVe.maLichChieu = id
         thongTinDatVe.danhSachVe = danhSachGheDangDat
-        console.log(thongTinDatVe, "thong tin dat ve");
+        // console.log(thongTinDatVe, "thong tin dat ve");
 
         dispatch(datVeAction(thongTinDatVe)); //Gọi API đặt vé
 
@@ -254,7 +254,7 @@ export default function Checkout(props) {
 }
 
 function callback(key) {
-    console.log(key);
+    // console.log(key);
 }
 
 

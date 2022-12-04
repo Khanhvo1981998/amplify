@@ -30,7 +30,7 @@ export default function Detail() {
     const filmDetail = useSelector(state => state.QuanLyPhimReducer.filmDetail)
     const { arrRapChieu } = useSelector(state => state.QuanLyRapReducer)
     // console.log("arrRapChieu", arrRapChieu);
-    console.log({ filmDetail });
+    // console.log({ filmDetail });
     const dispatch = useDispatch()
     const { id } = useParams();
 

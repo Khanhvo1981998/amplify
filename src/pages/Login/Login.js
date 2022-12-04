@@ -13,7 +13,7 @@ export default function Login(props) {
     const history = useNavigate()
 
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer)
-    console.log(userLogin, "userlogin");
+    // console.log(userLogin, "userlogin");
 
     const formik = useFormik({
         initialValues: {
@@ -27,7 +27,7 @@ export default function Login(props) {
             dispatch(action)
 
             message.success("Đăng nhập thành công")
-            console.log("value", values);
+            // console.log("value", values);
             setTimeout(() => {
                 history(-1)
             }, 1000);

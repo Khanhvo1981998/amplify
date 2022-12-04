@@ -9,8 +9,7 @@ import { QuanLyNguoiDungReducer } from "../redux/reducers/QuanLyNguoiDungReducer
 import { QuanLyDatVeReducer } from "../redux/reducers/QuanLyDatVeReducer";
 import { LoadingReducer } from "../redux/reducers/LoadingReducer";
 import thunk from "redux-thunk";
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() || compose;
-// import reduxThunk from "redux-thunk"
+
 
 
 
@@ -28,6 +27,6 @@ const rootReducer = combineReducers({
 
 })
 
-const store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+const store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__?.()));
 
 export default store;

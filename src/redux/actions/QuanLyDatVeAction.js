@@ -13,7 +13,7 @@ export const laychiTietPhongVeAction = (maLichChieu) => {
     return async dispatch => {
         try {
             const result = await qlDatVe.layChiTietPhongVe(maLichChieu);
-            console.log(result, "result");
+            // console.log(result, "result");
             //Lấy được dữ liệu từ api về  => reducer
             if (result.status === 200) {
                 dispatch({
@@ -21,12 +21,12 @@ export const laychiTietPhongVeAction = (maLichChieu) => {
                     chiTietPhongVe: result.data.content
                 });
             }
-            console.log("phong ve", result.data.content);
+            // console.log("phong ve", result.data.content);
 
         }
         catch (errors) {
-            console.log("errorss", errors);
-            console.log('errors', errors.response?.data)
+            // console.log("errorss", errors);
+            // console.log('errors', errors.response?.data)
 
         }
     }
