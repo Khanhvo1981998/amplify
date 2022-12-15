@@ -4,11 +4,12 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import RSlick from './RSlick/RSlick';
 import HomeCarousel from './Carousel/HomeCarousel';
 import { getDanhSachPhimAction } from '../../redux/actions/QuanLyPhimAction';
-
 import React, { useEffect } from 'react'
 import HomeMenu from './HomeMenu/HomeMenu';
 import { getQuanLyRapAction } from '../../redux/actions/QuanLyRapAction';
 import Background from '../../img/galaxy.jpg'
+import DanhSachPhimHomePage from './DanhSachPhimHomePage/DanhSachPhimHomePage';
+
 
 
 export default function HomePage(props) {
@@ -35,9 +36,9 @@ export default function HomePage(props) {
             <div>
                 <HomeCarousel />
             </div>
-            <section className='text-gray-600 body-text '>
-                <div className="container px-5 py-24 mx-auto">
-                    <RSlick arrFilm={arrFilm} />
+            <section className=''>
+                <div className="">
+                    <DanhSachPhimHomePage danhSachPhim={arrFilm} />
 
                 </div>
             </section>

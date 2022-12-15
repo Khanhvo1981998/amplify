@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .danh-sach-phim-main-div .ant-tabs-nav-list {
+    @apply my-2;
+  }
+  .danh-sach-phim-main-div .ant-tabs-nav-list .ant-tabs-tab {
+    @apply w-full flex justify-center items-center;
+    @apply bg-white;
+    @apply w-40;
+    @apply rounded;
+    @apply shadow-lg;
+    @apply duration-500;
+  }
+  .danh-sach-phim-main-div .ant-tabs-nav-list .ant-tabs-tab .ant-tabs-tab-btn {
+    @apply text-gray-700;
+    @apply font-bold;
+  }
+  .danh-sach-phim-main-div .ant-tabs-nav-list .ant-tabs-tab-active {
+    @apply bg-rose-500;
+  }
+  .danh-sach-phim-main-div
+    .ant-tabs-nav-list
+    .ant-tabs-tab-active
+    .ant-tabs-tab-btn {
+    @apply text-white;
+  }
+  .danh-sach-phim-main-div .ant-tabs-ink-bar {
+    @apply bg-transparent;
+  }
+  .danh-sach-phim-main-div .ant-tabs-tab:hover {
+    @apply bg-rose-500;
+  }
+  .danh-sach-phim-main-div .ant-tabs-tab:hover .ant-tabs-tab-btn {
+    @apply text-white;
+  }
+  .danh-sach-phim-main-div .ant-tabs-nav::before {
+    @apply border-b-transparent;
+  }
+} /*# sourceMappingURL=DanhSachPhimHomePage.css.map */

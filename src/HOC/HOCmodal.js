@@ -1,45 +1,12 @@
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-// export default function HOCmodal() {
-
-//     const dispatch = useDispatch();
-
-//     return (
-//         <div>{/* Button trigger modal */}
-//             <button
-//                 onClick={() => {
-//                     dispatch({
-//                         type: 'OPEN_FORM',
-//                         Component: <Login />
-//                     })
-//                 }}
-//                 type="button" className="self-center px-8 py-3 rounded text-white border border-warning" data-toggle="modal" data-target="#modelId">
-//                 Đăng nhập
-//             </button>
-//             <button
-//                 onClick={() => {
-//                     dispatch({
-//                         type: 'OPEN_FORM',
-//                         Component: <Register />
-//                     })
-//                 }}
-//                 type="button" className="self-center px-8 py-3 rounded text-white border border-warning" data-toggle="modal" data-target="#modelId">
-//                 Đăng ký
-//             </button>
-
-//         </div>
-
-//     )
-// }
-
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate, useMatch, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Select } from "antd";
-import { Dropdown, Menu, message, Space } from "antd";
-import { logout } from "../redux/reducers/authReducer";
-import { localStoreService } from "../services/localStoreService";
+import { Dropdown, Menu, Space } from "antd";
+// import { localStoreService } from "../services/localStoreService";
 import { useTranslation } from 'react-i18next';
 
 
@@ -50,7 +17,7 @@ export default function HOCmodal() {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    let location = useLocation();
+
 
     // Hook đa ngôn ngữ
     const { t, i18n } = useTranslation();
@@ -68,11 +35,11 @@ export default function HOCmodal() {
                     <div className="">
                         <button
                             onClick={(e) => {
-                                // localStoreService.removeUserLocal()
+
                                 localStorage.clear();
                                 window.location.reload();
                             }}
-                            // onClick={handleLogout}
+
                             type="button" className=" w-100 self-center px-8 py-3 rounded text-white border " data-toggle="modal" data-target="#modelId">
                             <Menu.Item style={{ color: "red" }} >{t('logout')}</Menu.Item>
                         </button>

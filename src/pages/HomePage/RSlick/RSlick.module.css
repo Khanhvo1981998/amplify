@@ -17,21 +17,22 @@
 }
 
 .active_Film {
-  /* @apply bg-gray-800 .text-white ; */
   background-color: gray !important;
 
   color: white !important;
 }
 
-.non_activeFilm {
-  /* @apply .bg-white .text-gray-800; */
+/* .non_activeFilm {
   background-color: white !important;
   color: gray !important;
 }
 
-/* .slick-prev {
-  left: -57px;
+.slick-prev:before,
+.slick-next:before {
+  color: gray !important;
+  font-size: 3rem !important;
 } */
+
 .slick-prev:before,
 .slick-next:before {
   color: gray !important;
@@ -40,4 +41,12 @@
 
 .width-item {
   width: 100% !important;
+}
+
+.active_Film {
+  @apply bg-gray-800 text-white;
+}
+
+.none_active_Film {
+  @apply bg-white text-gray-800;
 }

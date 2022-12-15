@@ -1,10 +1,12 @@
-import React, { Component, Fragment, useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Slider from "react-slick";
+import React from 'react';
 import { SET_FILM_DANG_CHIEU, SET_FILM_SAP_CHIEU, } from '../../../redux/actions/TYPES/ActionType';
 import FilmFlip from '../Film/FilmFlip/FilmFlip';
 import styleSlick from "../RSlick/RSlick.module.css"
 import { useSelector, useDispatch } from "react-redux";
+import Slider from 'react-slick';
+
+
+
 
 
 
@@ -44,6 +46,7 @@ const RSlick = (props) => {
     const renderFilms = () => {
         return props.arrFilm.slice(0, 12).map((item, index) => {
             return <div className='' key={index}>
+                {/* <div className='w-full h-full bg-red-800'>dsfsdf</div> */}
                 <FilmFlip item={item} arrFilm={arrFilm} />
 
             </div>
@@ -56,16 +59,17 @@ const RSlick = (props) => {
     const settings = {
         className: "center variable-width",
         centerMode: true,
-        centerPadding: "60px",
-        rows: 2,
-        speed: 50,
-        slidesPerRow: 1,
         infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        centerPadding: "60px",
+
+        speed: 500,
+        rows: 2,
+        slidesPerRow: 2,
+        variableWidth: true,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
-        // dots: true,
+        lazyLoad: true,
+
     };
     return (
         <div>
@@ -82,7 +86,6 @@ const RSlick = (props) => {
             <Slider {...settings}>
                 {renderFilms()}
 
-
             </Slider>
         </div >
     )
@@ -90,4 +93,8 @@ const RSlick = (props) => {
 
 
 export default RSlick;
+
+
+
+
 

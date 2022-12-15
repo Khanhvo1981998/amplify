@@ -85,7 +85,7 @@ export default function HomeMenu(props) {
     }
     return (
         <div className=' w-full '>
-            <Tabs>
+            <Tabs tabPosition={tabPosition}>
                 {renderHeThongRap()}
             </Tabs>
         </div>

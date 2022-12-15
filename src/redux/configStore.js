@@ -1,5 +1,4 @@
 import { applyMiddleware, combineReducers, createStore, compose } from "redux";
-import ToDoListReducer from "./reducers/ToDoListReducer";
 import MovieReducer from "./reducers/MovieReducer";
 import { ModalReducer } from "./reducers/ModalReducer";
 import { CarouselReducer } from "./reducers/CarouselReducer";

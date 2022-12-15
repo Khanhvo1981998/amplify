@@ -1,10 +1,4 @@
 import HomePage from "../pages/HomePage/HomePage";
-// import LoginPage from "../pages/LoginPage/LoginPage";
-// import NotFound from "../pages/NotFound/NotFound";
-// import RegisterPage from "../pages/RegisterPage/RegisterPage";
-// import LayoutTheme from "../HOC/layout/LayoutTheme";
-// import MovieDetailPage from "../pages/MovieDetailPage/MovieDetailPage";
-// import PurchasePage from "../pages/PurchasePage/PurchasePage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Detail from "../pages/Detail/Detail";

@@ -7,8 +7,6 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 export default function Film_Flip(props) {
     const history = useNavigate
     const { item } = props;
-
-
     return (
         <div className="flip-card mt-3 ">
             <div className="flip-card-inner">
@@ -36,6 +34,7 @@ export default function Film_Flip(props) {
             </div>
 
         </div>
+
 
     )
 }

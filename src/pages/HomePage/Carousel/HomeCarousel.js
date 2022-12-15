@@ -14,7 +14,7 @@ const contentStyle = {
     backgroundSize: '100%',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: "center",
-    dotsClass: "button__bar",
+    dotsClass: "button_bar",
 
 }
 export default function HomeCarousel() {
@@ -43,7 +43,6 @@ export default function HomeCarousel() {
     return (
         <Carousel style={{ position: "relative", zIndex: 0 }} >
             {renderImg()}
-
         </Carousel>
     )
 }

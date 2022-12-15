@@ -39,7 +39,7 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
             dispatch(displayLoadingAction)
 
             const result = await qlDatVe.datVe(thongTinDatVe);
-            console.log(result, "result");
+            // console.log(result, "result");
 
             console.log(result.data.content);
             await dispatch(laychiTietPhongVeAction(thongTinDatVe.maLichChieu))
@@ -48,8 +48,8 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
 
         }
         catch (errors) {
-            console.log("errorss", errors);
-            console.log('errors', errors.response?.data)
+            // console.log("errorss", errors);
+            // console.log('errors', errors.response?.data)
             dispatch({
                 type: "HIDE_LOADING"
             })
