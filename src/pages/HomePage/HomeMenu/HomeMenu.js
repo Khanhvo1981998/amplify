@@ -21,8 +21,8 @@ export default function HomeMenu(props) {
 
             return (
                 <TabPane className='tabpane-scroll'
-                    tab={
-                        <img src={heThongRap.logo} className="rounded-full d-flex justify-center align-items-center" width="50" />} key={index}>
+                    tab={<img src={heThongRap.logo} className="rounded-full d-flex justify-center align-items-center" width="50" />} key={index}
+                >
                     <Tabs tabPosition={tabPosition}>
                         {heThongRap.lstCumRap?.map((cumRap, index) => {
                             return (
@@ -86,7 +86,7 @@ export default function HomeMenu(props) {
     return (
         <div className=' w-full '>
             <Tabs tabPosition={tabPosition}>
-                {renderHeThongRap()}
+                {/* {renderHeThongRap()} */}
             </Tabs>
         </div>
     )

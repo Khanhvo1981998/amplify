@@ -81,7 +81,7 @@ export default function DanhSachPhimHomePage(props) {
     return (
         <div className='danh-sach-phim-main-div my-5'>
             <Tabs defaultActiveKey="1" centered>
-                {renderDanhSachPhim()}
+                {/* {renderDanhSachPhim()} */}
             </Tabs>
         </div>
     )
