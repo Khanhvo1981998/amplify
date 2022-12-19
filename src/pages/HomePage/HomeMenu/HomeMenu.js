@@ -1,9 +1,10 @@
-import React, { Fragment, useState } from 'react';
-import { Tabs, Radio, Space } from 'antd';
-import { connect } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Tabs, Radio, Space, message } from 'antd';
+import { connect, useDispatch } from 'react-redux';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import "../../HomePage/HomeMenu/HomeMenu.css"
 import moment from 'moment';
+import { useFormik } from 'formik';
 const { TabPane } = Tabs;
 
 
@@ -42,7 +43,7 @@ export default function HomeMenu(props) {
                                     {/* Load phim tương ứng */}
                                     {cumRap.danhSachPhim.slice(0, 4).map((phim, index) => {
                                         return <Fragment key={index}>
-                                            <div className="my-5" >
+                                            <div className="my-5 h-56" >
                                                 <div style={{ display: 'flex' }}>
                                                     <img style={{ height: 75, width: 75 }} src={phim.hinhAnh} alt={phim.tenPhim} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/75/75" }} />
 
@@ -86,8 +87,9 @@ export default function HomeMenu(props) {
     return (
         <div className=' w-full '>
             <Tabs tabPosition={tabPosition}>
-                {/* {renderHeThongRap()} */}
+                {renderHeThongRap()}
             </Tabs>
         </div>
     )
 }
+

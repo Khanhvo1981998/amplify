@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "-": "^0.0.1",
     "@ant-design/icons": "^4.6.2",
+    "@aws-amplify/cli": "^10.5.2",
+    "@aws-amplify/ui-react": "^4.2.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@fontsource/roboto": "^4.5.8",
@@ -20,6 +23,7 @@
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "antd": "^4.23.4",
+    "aws-amplify": "^5.0.7",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
     "formik": "^2.2.9",

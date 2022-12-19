@@ -26,14 +26,14 @@ export default function ShowTimeMovies({ arrRapChieu }) {
                                                 <img
                                                     src={cinema.hinhAnh}
                                                     alt=""
-                                                    className="w-20 rounded-full"
+                                                    className="w-20 rounded-full bg-cover bg-repeat "
                                                 />
                                             </div>
                                             <div>
                                                 <h3 className="text-yellow-500 font-semibold text-left text-lg">
                                                     {cinema.tenCumRap}
                                                 </h3>
-                                                <p className="text-slate-200 text-left ">
+                                                <p className=" text-orange-600 text-left ">
                                                     {cinema.diaChi}
                                                 </p>
                                             </div>
@@ -49,7 +49,7 @@ export default function ShowTimeMovies({ arrRapChieu }) {
                                                         {showTime.lstLichChieuTheoPhim.slice(0, 8).map(
                                                             (showTimeList) => {
                                                                 return (
-                                                                    <div className="">
+                                                                    <div className=" bg-red-400">
                                                                         <NavLink
                                                                             key={
                                                                                 showTimeList.maLichChieu
@@ -99,7 +99,7 @@ export default function ShowTimeMovies({ arrRapChieu }) {
     return (
         <div>
             <div className="">
-                <h2 className="text-slate-200 text-3xl text-center font-bold">
+                <h2 className=" text-black text-3xl text-center font-bold pt-5">
                     Lịch Chiếu
                 </h2>
                 <div className="mt-10">

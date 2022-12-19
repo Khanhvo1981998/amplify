@@ -32,13 +32,16 @@ export default function HomePage(props) {
     }, [])
 
     return (
-        <div className='page' style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover", backgroundRepeat: `no-repeat`, backgroundPosition: `center` }}>
+        <div className='page'
+        // style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover", backgroundRepeat: `no-repeat`, backgroundPosition: `center` }}
+        >
             <div>
                 <HomeCarousel />
             </div>
             <section className=''>
                 <div className="">
                     <DanhSachPhimHomePage danhSachPhim={arrFilm} />
+                    {/* <RSlick arrFilm={arrFilm} /> */}
 
                 </div>
             </section>

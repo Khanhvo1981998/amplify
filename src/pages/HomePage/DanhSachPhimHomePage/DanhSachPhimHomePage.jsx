@@ -14,6 +14,9 @@ export default function DanhSachPhimHomePage(props) {
     let { danhSachPhim } = props;
 
 
+
+
+
     //Truyền thêm key number & tab name vào danh sách phim
     let phanLoaiPhim = [ //Tạo danh sách phân loại hạng mục phim
         {
@@ -60,6 +63,7 @@ export default function DanhSachPhimHomePage(props) {
             }) : [],
         };
     });
+    console.log({ danhSachPhimTab });
 
     //Render danh sách phim theo phân loại hạng mục
     const renderDanhSachPhim = () => {
@@ -81,7 +85,7 @@ export default function DanhSachPhimHomePage(props) {
     return (
         <div className='danh-sach-phim-main-div my-5'>
             <Tabs defaultActiveKey="1" centered>
-                {/* {renderDanhSachPhim()} */}
+                {renderDanhSachPhim()}
             </Tabs>
         </div>
     )
