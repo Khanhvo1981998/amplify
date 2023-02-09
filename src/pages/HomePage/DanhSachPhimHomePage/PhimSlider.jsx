@@ -8,6 +8,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import '../css/PhimSlider.css';
 import { useNavigate, Link, NavLink } from 'react-router-dom';
 import useWindowDimensions from '../../../hook/useWindowDimensions';
+import { useSelector } from 'react-redux';
 
 
 export default function PhimSlider(props) {
@@ -16,6 +17,10 @@ export default function PhimSlider(props) {
 
     //Props nhận từ DanhSachPhimHomePage
     let { DSPhim } = props;
+    console.log({ DSPhim });
+    const { arrRapChieu } = useSelector(state => state.QuanLyRapReducer)
+
+    console.log({ arrRapChieu });
 
 
 
