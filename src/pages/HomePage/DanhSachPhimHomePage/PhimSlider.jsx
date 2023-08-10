@@ -73,12 +73,12 @@ export default function PhimSlider(props) {
                 return (
                     <div className='px-1 mb-5' key={index}>
                         <div
-                            className=' movie-card bg-gray-800 border border-gray-300 rounded-xl shadow-lg mx-2 overflow-hidden group relative'
+                            className='relative mx-2 overflow-hidden bg-gray-800 border border-gray-300 shadow-lg movie-card rounded-xl group'
                         >
-                            <div className='absolute top-1/4 z-0 w-full flex justify-center flex-wrap group-hover:border-b-orange-400 group-hover:z-10'>
+                            <div className='absolute z-0 flex flex-wrap justify-center w-full top-1/4 group-hover:border-b-orange-400 group-hover:z-10'>
 
                                 {/* <button
-                                    className='w-full my-2 mx-14 px-3 py-2 border border-rose-500 text-white rounded hover:border-transparent hover:bg-rose-500 hover:text-white duration-500 -translate-x-56 group-hover:translate-x-0'
+                                    className='w-full px-3 py-2 my-2 text-white duration-500 -translate-x-56 border rounded mx-14 border-rose-500 hover:border-transparent hover:bg-rose-500 hover:text-white group-hover:translate-x-0'
                                     onClick={() => { navigate(`/checkout/${phim.maLichChieu}`) }}
                                 >
                                     <NavLink className="text-white">
@@ -87,14 +87,14 @@ export default function PhimSlider(props) {
                                 </button> */}
 
                                 <button
-                                    className='w-full my-2 mx-14 px-3 py-2 border border-rose-500  text-pink-800 rounded hover:border-transparent hover:bg-rose-500 hover:text-white duration-500 translate-x-56 group-hover:translate-x-0'
+                                    className='w-full px-3 py-2 my-2 text-pink-800 duration-500 translate-x-56 border rounded mx-14 border-rose-500 hover:border-transparent hover:bg-rose-500 hover:text-white group-hover:translate-x-0'
                                     onClick={() => { navigate(`/detail/${phim.maPhim}`) }}
                                 >
                                     Xem chi tiết
                                 </button>
                             </div>
                             <div
-                                className='w-full flex flex-wrap relative justify-center overflow-hidden'
+                                className='relative flex flex-wrap justify-center w-full overflow-hidden'
                             >
                                 <img
                                     src={phim.hinhAnh}
@@ -103,10 +103,10 @@ export default function PhimSlider(props) {
                                 <div className='absolute w-full h-80 group-hover:bg-black/60' />
                             </div>
                             <div
-                                className='w-full my-5 flex flex-wrap justify-center'
+                                className='flex flex-wrap justify-center w-full my-5'
                             >
                                 <Link to={`/detail/${phim.maPhim}`}>
-                                    <p className='w-full text-center text-1xl  text-red-900 font-bold hover:text-rose-500 duration-500'>
+                                    <p className='w-full font-bold text-center text-red-900 duration-500 text-1xl hover:text-rose-500'>
                                         {phim.tenPhim}
                                     </p>
                                 </Link>
@@ -118,7 +118,7 @@ export default function PhimSlider(props) {
                                         defaultValue={phim.danhGia / 2}
                                     /> {phim.danhGia / 2}/5
                                 </p>
-                                <p className='w-full text-center text-sm text-gray-500'>
+                                <p className='w-full text-sm text-center text-gray-500'>
                                     Ngày khởi chiếu: {moment(phim.ngayKhoiChieu).format(dateFormat)}
                                 </p>
                             </div>
@@ -131,7 +131,7 @@ export default function PhimSlider(props) {
     };
 
     return (
-        <div className="w-11/12 mx-auto relative">
+        <div className="relative w-11/12 mx-auto">
             <Fragment>
                 <Slider
                     ref={customSlider}
@@ -142,26 +142,19 @@ export default function PhimSlider(props) {
 
                 </Slider>
                 <button
-                    className='absolute rounded-xl font-bold text-base bg-white text-rose-500 border border-gray-300 duration-1000 hover:bg-rose-500 hover:text-white hover:border-transparent
-                    left-12 px-3 py-2 ml-0
-                    md:left-1/3 md:px-3 md:py-2 md:ml-0
-                    lg:left-1/3 lg:px-3 lg:py-2 lg:ml-20'
+                    className='absolute px-3 py-2 ml-0 text-base font-bold duration-1000 bg-white border border-gray-300 rounded-xl text-rose-500 hover:bg-rose-500 hover:text-white hover:border-transparent left-12 md:left-1/3 md:px-3 md:py-2 md:mr-0 lg:left-1/3 lg:px-3 lg:py-2 lg:mr-20'
+
                     onClick={() => { goToPrevious() }}
                 >
                     <FontAwesomeIcon icon={faArrowLeftLong} />
                 </button>
                 <button
-                    className='absolute rounded-xl font-bold text-base bg-white text-rose-500 border border-gray-300 duration-1000 hover:bg-rose-500 hover:text-white hover:border-transparent
-                    right-12 px-3 py-2 mr-0
-                    md:right-1/3 md:px-3 md:py-2 md:mr-0
-                    lg:right-1/3 lg:px-3 lg:py-2 lg:mr-20'
+                    className='absolute px-3 py-2 mr-0 text-base font-bold duration-1000 bg-white border border-gray-300 rounded-xl text-rose-500 hover:bg-rose-500 hover:text-white hover:border-transparent right-12 md:right-1/3 md:px-3 md:py-2 md:mr-0 lg:right-1/3 lg:px-3 lg:py-2 lg:mr-20'
                     onClick={() => { goToNext() }}
                 >
                     <FontAwesomeIcon icon={faArrowRightLong} />
                 </button>
             </Fragment>
-
-
-        </div>
+        </div >
     )
 }

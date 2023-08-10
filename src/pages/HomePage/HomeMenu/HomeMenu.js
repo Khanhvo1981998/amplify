@@ -22,7 +22,7 @@ export default function HomeMenu(props) {
 
             return (
                 <TabPane className='tabpane-scroll'
-                    tab={<img src={heThongRap.logo} className="rounded-full d-flex justify-center align-items-center" width="50" />} key={index}
+                    tab={<img src={heThongRap.logo} className="justify-center rounded-full d-flex align-items-center" width="50" />} key={index}
                 >
                     <Tabs tabPosition={tabPosition}>
                         {heThongRap.lstCumRap?.map((cumRap, index) => {
@@ -32,7 +32,7 @@ export default function HomeMenu(props) {
                                         <div style={{ width: '300px', display: 'flex' }} >
                                             <img src="https://s3img.vcdn.vn/123phim/2018/09/ddc-dong-da-15379624326697.jpg" width="50" /> <br />
                                             <div >
-                                                <div className="text-left ml-2  ">
+                                                <div className="ml-2 text-left ">
                                                     {cumRap.tenCumRap}
                                                     <p className="text-red-200">Chi tiết</p>
                                                 </div>
@@ -43,7 +43,7 @@ export default function HomeMenu(props) {
                                     {/* Load phim tương ứng */}
                                     {cumRap.danhSachPhim.slice(0, 4).map((phim, index) => {
                                         return <Fragment key={index}>
-                                            <div className="my-5 h-56" >
+                                            <div className="my-5  h-72" >
                                                 <div style={{ display: 'flex' }}>
                                                     <img style={{ height: 75, width: 75 }} src={phim.hinhAnh} alt={phim.tenPhim} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/75/75" }} />
 
@@ -52,7 +52,7 @@ export default function HomeMenu(props) {
                                                         <p className='text-black'>{cumRap.diaChi}</p>
                                                         <div className="grid grid-cols-4 gap-6">
                                                             {phim.lstLichChieuTheoPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                                return <NavLink className=" text-2xl text-green-400" to={`/checkout/${lichChieu.maLichChieu}`} key={index}>
+                                                                return <NavLink className="text-2xl text-green-400 " to={`/checkout/${lichChieu.maLichChieu}`} key={index}>
                                                                     <button style={{ height: 50 }} className=' rounded bg-gray-100 text-rose-500 font-bold duration-300 hover:bg-red-500 hover:text-black hover:shadow-lg
                                                                                                         m-1 px-0.5 md:text-xs md:w-fit md:h-10 md:m-2 md:py-0 lg:text-sm lg:w-40 lg:h-8 lg:m-2 lg:py-1'>
 
@@ -85,7 +85,7 @@ export default function HomeMenu(props) {
         })
     }
     return (
-        <div className=' w-full '>
+        <div className='w-full '>
             <Tabs tabPosition={tabPosition}>
                 {renderHeThongRap()}
             </Tabs>

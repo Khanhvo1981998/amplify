@@ -19,17 +19,19 @@ export default function Login(props) {
         initialValues: {
             taiKhoan: '',
             matKhau: '',
-
         },
         onSubmit: values => {
 
             const action = dangNhapAction(values);
             dispatch(action)
+            if (userLogin) {
+                message.success("Đăng nhập thành công")
+            }
+            message.success("Đăng nhập thất bại")
 
-            message.success("Đăng nhập thành công")
             // console.log("value", values);
             setTimeout(() => {
-                history(-1)
+                history()
             }, 1000);
         },
 
@@ -70,21 +72,7 @@ export default function Login(props) {
     //     }
     // }
 
-    // const handleLogin = (event) => {
-    //     event.preventDefault()
-    //     if (userLogin.userName === 'khanhdev' && userLogin.passWord === 'khanhdev') {
-    //         // goBack : login thanh cong thi chuyen ve trang truoc do
-    //         history(-1)
-    //         // Tro ve 1 trang chi chinh (Home)
-    //         // history('/home')
-    //         localStorage.setItem('userLogin', JSON.stringify(userLogin))
-    //         alert('Login success');
-    //         console.log("asdad", userLogin);
-    //     } else {
-    //         alert("Login Fail")
-    //         return
-    //     }
-    // }
+
 
     return (
 
@@ -98,21 +86,21 @@ export default function Login(props) {
                                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp" alt="login form" className="img-fluid" style={{ borderRadius: '1rem 0 0 1rem' }} />
                                 </div>
                                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                                    <div className="card-body p-4 p-lg-5 text-black">
+                                    <div className="p-4 text-black card-body p-lg-5">
 
                                         <div >
-                                            <div className="d-flex align-items-center mb-3 pb-1">
+                                            <div className="pb-1 mb-3 d-flex align-items-center">
                                                 <i className="fas fa-cubes fa-2x me-3" style={{ color: '#ff6219' }} />
-                                                <span className="h1 fw-bold mb-0">Login</span>
+                                                <span className="mb-0 h1 fw-bold">Login</span>
                                             </div>
-                                            <h5 className="fw-normal mb-3 pb-3" style={{ letterSpacing: 1 }}>Sign into your account</h5>
-                                            <div className="form-outline mb-4 form-group">
+                                            <h5 className="pb-3 mb-3 fw-normal" style={{ letterSpacing: 1 }}>Sign into your account</h5>
+                                            <div className="mb-4 form-outline form-group">
                                                 <input name='taiKhoan' type="username" id="form2Example17" placeholder="Nhập tài khoản"
                                                     onChange={formik.handleChange}
                                                     className="form-control form-control-lg" />
                                                 <label className="form-label" htmlFor="form2Example17">Username</label>
                                             </div>
-                                            <div className="form-outline mb-4 form-group">
+                                            <div className="mb-4 form-outline form-group">
                                                 <input name='matKhau' type="password" id="form2Example27" placeholder="Nhập mật khẩu"
                                                     onChange={formik.handleChange}
                                                     className="form-control form-control-lg" />
